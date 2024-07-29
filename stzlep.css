@@ -1,0 +1,85 @@
+#profil{
+    width: 90%;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 3px 30px 30px black;
+
+
+}
+#b{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    font-size: 1.5em;
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(57, 162, 248);
+
+}
+body{
+    background-color: rgba(255, 255, 255, 0);
+}
+.prof img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+                 
+}
+em{
+    font-size: 5em;
+    font-style: normal;
+}
+.bout{
+    display: flex;
+    justify-content: space-around;
+}
+.bloc1{
+    display: block;
+    width: 50%;
+   /* background: url(prof2.jpg) no-repeat;*/
+    background-size: cover;
+    border-radius: 100%;
+}
+.bloc2{
+    display: block;
+    width: 50%;
+    justify-content: space-around;
+}
+.bloc3{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+.blo12{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    border-radius: 50%;
+    border: 0px solid rgb(13, 139, 38);
+ 
+   padding: 6%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    box-shadow: 3px 30px 30px rgb(11, 87, 123);
+ 
+    background-color:rgb(57, 186, 241);
+
+}
+a:hover{
+    color: green;
+    background-color: greenyellow;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 6%;
+    box-shadow: 3px 30px 30px rgb(56, 85, 12);
+
+}
+.bloc{
+    width: 100%;
+}
+.desc{
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+    font-style:italic;
+}

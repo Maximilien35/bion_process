@@ -1,2 +1,2 @@
-let nom=0;
-console.log("entrer un nombre");
+let nom=5;
+console.log(nom+5);
