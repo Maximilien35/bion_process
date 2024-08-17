@@ -10,7 +10,7 @@ window.addEventListener('scroll',function(){
         header.style.top="-300px";
 
     }else{
-        header.style.top='0';
+        header.style.top='-30px';
     }
     lastScrollTop = scrollTop<=0 ? 0:scrollTop;
 
