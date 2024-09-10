@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Déclaration du type de document HTML -->
+<html lang="fr">
+<!-- Spécification de la langue du document en français -->
+<head>
+    <!-- Section head du document HTML -->
+    <meta charset="UTF-8">
+    <!-- Définition de l'encodage des caractères en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Définition des paramètres de la vue pour les appareils mobiles -->
+    <title>Administration du Blog</title>
+    <!-- Titre de la page -->
+    <style>
+        /* Définition des styles CSS pour le document */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .blog-post {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .delete-button {
+            background-color: #dc3545;
+        }
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Section body du document HTML -->
+    <h1>Administration du Blog</h1>
+    <!-- Titre de la page -->
+
+    <form id="blogForm">
+        <!-- Formulaire pour ajouter un article de blog -->
+        <input type="text" id="title" placeholder="Titre du Blog" required>
+        <!-- Champ de saisie pour le titre de l'article -->
+        <textarea id="content" rows="4" placeholder="Contenu du Blog" required></textarea>
+        <!-- Zone de texte pour le contenu de l'article -->
+        <button type="submit">Ajouter un Article</button>
+        <!-- Bouton pour soumettre le formulaire -->
+    </form>
+
+    <div id="blogPosts">
+        <!-- Conteneur pour les articles de blog -->
+    </div>
+
+    <script>
+        // Récupération des éléments du formulaire et du conteneur des articles
+        const blogForm = document.getElementById('blogForm');
+        const blogPosts = document.getElementById('blogPosts');
+
+        let posts = []; // Tableau pour stocker les articles de blog
+
+        // Événement pour soumettre le formulaire
+        blogForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+
+            // Récupération des valeurs des champs de saisie
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+
+            // Création d'un objet pour stocker l'article
+            const post = { title, content };
+            posts.push(post); // Ajout de l'article au tableau
+
+            displayPosts(); // Affichage des articles
+
+            blogForm.reset(); // Réinitialisation du formulaire
+        });
+
+        // Fonction pour afficher les articles de blog
+        function displayPosts() {
+            blogPosts.innerHTML = ''; // Vide le conteneur des articles
+
+            posts.forEach((post, index) => {
+                // Création d'un élément pour stocker l'article
+                const postDiv = document.createElement('div');
+                postDiv.classList.add('blog-post'); // Ajout de la classe pour le style
+
+                // Création du contenu de l'article
+                postDiv.innerHTML = `
+                    <h2>${post.title}</h2>
+                    <p>${post.content}</p>
+                    <button onclick="deletePost(${index})" class="delete-button">Supprimer</button>
+                `;
+
+                blogPosts.appendChild(postDiv); // Ajout de l'article au conteneur
+            });
+        }
+
+        // Fonction pour supprimer un
+    function deletePost(index) {
+        posts.splice(index, 1);
+        displayPosts();
+    }
+</script>
+
+</body>
+</html>
